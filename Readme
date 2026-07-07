@@ -1,0 +1,41 @@
+🌐 DNS_App
+
+-> A small distributed systems demo built in Python and Docker.
+
+🚀 Features
+
+-> Three independent microservices, each in its own Docker container
+-> Custom DNS-style protocol built on raw UDP sockets
+-> Service registration — a server announces itself to a directory service on startup
+-> Name-based service lookup instead of hardcoded IPs
+-> REST API (Flask) for computing Fibonacci numbers
+-> Fully containerized with Docker Compose — one command to run everything
+
+🛠️ Tech Stack
+
+-> Python 3.9
+-> Flask (REST APIs)
+-> Raw UDP sockets (custom DNS-style protocol)
+-> Docker & Docker Compose
+-> Requests (inter-service HTTP calls)
+
+📦 Project Structure
+
+dns-fib-app/
+├── docker-compose.yml
+├── README.md
+├── as/
+│   ├── Dockerfile
+│   └── authoritative_server.py
+├── fs/
+│   ├── Dockerfile
+│   └── fibonacci_server.py
+└── us/
+    ├── Dockerfile
+    └── user_server.py
+
+
+✅ Prerequisites
+
+-> [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+-> No authentication or input validation beyond basic checks — this is a learning/demo project, not a production service mesh
