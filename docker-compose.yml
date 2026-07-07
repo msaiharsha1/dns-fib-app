@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  as:
+    build: ./as
+    container_name: as
+    ports:
+      - "53533:53533/udp"
+
+  fs:
+    build: ./fs
+    container_name: fs
+    ports:
+      - "9090:9090"
+    depends_on:
+      - as
+
+  us:
+    build: ./us
+    container_name: us
+    ports:
+      - "8080:8080"
+    depends_on:
+      - as
+      - fs
